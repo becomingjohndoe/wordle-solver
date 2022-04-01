@@ -30,8 +30,6 @@ export const getGuess = (guess) => {
 		}
 		return false;
 	});
-	console.log(nextGuesses);
-	console.log(incorrect);
 	return nextGuesses;
 };
 
