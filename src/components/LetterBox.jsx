@@ -5,28 +5,28 @@ export default function LetterBox({ reference, letter, addToGuess, index }) {
 		<div className="flex flex-col">
 			<div
 				ref={reference}
-				className="h-24 w-24 border-slate-600 border-2 text-8xl text-center font-extrabold"
+				className=" h-auto w-auto border-slate-600 border-2 sm:text-4xl text-4xl text-center font-extrabold p-4"
 			>
 				{letter}
 			</div>
-			<div className="flex ">
+			<div className="flex flex-col sm:flex-row gro">
 				<div
 					onClick={() => {
 						addToGuess(reference, reference.current.innerHTML, index, "-", "grey");
 					}}
-					className="bg-slate-400 h-8 w-8"
+					className="bg-slate-400 h-8 w-full border border-slate-600"
 				></div>
 				<div
 					onClick={() => {
 						addToGuess(reference, reference.current.innerHTML, index, "O", "yellow");
 					}}
-					className="bg-yellow-400 h-8 w-8"
+					className="bg-yellow-400 h-8 w-full border border-slate-600"
 				></div>
 				<div
 					onClick={() => {
 						addToGuess(reference, reference.current.innerHTML, index, "X", "green");
 					}}
-					className="bg-green-400 h-8 w-8"
+					className="bg-green-400 h-8 w-full border border-slate-600"
 				></div>
 			</div>
 		</div>

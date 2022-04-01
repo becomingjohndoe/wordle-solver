@@ -66,25 +66,29 @@ export default function Home() {
 
 	return (
 		<>
+			{/* HEADER */}
 			<div className="mb-10 flex flex-col items-center justify-center h-full">
-				<div className="absolute text-slate-800 drop-shadow-2xl shadow-white text-8xl z-10 font-semibold">
+				<div className="absolute text-slate-800 drop-shadow-2xl shadow-white sm:text-6xl text-4xl z-10 font-semibold">
 					WORDLE SOLVER
 				</div>
 				<img className="h-40 w-full object-cover opacity-50" src={wordle} alt="" />
 			</div>
+			{/* MAIN */}
 			<div className="flex flex-col items-center font-sans">
+				{/* INPUT */}
 				<span className="text-4xl">Input Guess</span>
 				<input
 					onChange={(e) => {
 						if (e.target.value.length < 5) resetColors();
 						setInput(e.target.value.toUpperCase());
 					}}
-					className="border-2 border-slate-700 uppercase text-center h-20 text-4xl font-semibold"
+					className="border-2 border-slate-700 uppercase text-center text-2xl sm:text-4xl font-semibold"
 					type="text"
 					name=""
 					id=""
 					maxLength={5}
 				/>
+				{/* COLOUR SELECTOR */}
 				<span className="text-4xl">Select Colours</span>
 				<div className="flex gap-2 mt-4">
 					<LetterBox
@@ -118,6 +122,7 @@ export default function Home() {
 						addToGuess={addToGuess}
 					/>
 				</div>
+				{/* Guess Button */}
 				<button
 					onClick={() => {
 						setNext(getGuess(guess));
@@ -126,6 +131,7 @@ export default function Home() {
 				>
 					Get Next Guesses
 				</button>
+				{/* NEXT Guesses */}
 				<div className="flex flex-col">
 					{next && (
 						<div className="flex flex-wrap gap-2 p-10 max-h-96 overflow-hidden">
