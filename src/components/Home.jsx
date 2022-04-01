@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Footer from "./Footer";
 import guesses from "../constants/valid-guesses";
 import LetterBox from "./LetterBox";
 import wordle from "../images/wordle.gif";
@@ -67,7 +68,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="mb-10 flex flex-col items-center justify-center">
+			<div className="mb-10 flex flex-col items-center justify-center h-full">
 				<div className="absolute text-slate-800 drop-shadow-2xl shadow-white text-8xl z-10 font-semibold">
 					WORDLE SOLVER
 				</div>
@@ -119,27 +120,26 @@ export default function Home() {
 						addToGuess={addToGuess}
 					/>
 				</div>
-				<div className="flex flex-col items-center">
-					<button
-						onClick={() => {
-							setNext(getGuess(guess));
-						}}
-						className="h-20 border-2 p-4 mt-4 bg-gradient-to-r from-slate-400 via-yellow-400 to-green-400 font-extrabold text-slate-900 text-2xl"
-					>
-						Get Next Guesses
-					</button>
+				<button
+					onClick={() => {
+						setNext(getGuess(guess));
+					}}
+					className="h-20 border-2 p-4 mt-4 border-slate-400 text-slate-900 text-2xl"
+				>
+					Get Next Guesses
+				</button>
+				<div className="flex flex-col">
 					{next && (
-						<div className="flex flex-col">
-							<div className="flex flex-col gap-2 items-center">
-								{next.map((n, i) => (
-									<span key={i} className="text-2xl">
-										{n}
-									</span>
-								))}
-							</div>
+						<div className="flex flex-wrap gap-2 p-10 max-h-96 overflow-hidden">
+							{next.slice(0, 9).map((n, i) => (
+								<div key={i} className="text-2xl border border-slate-600 p-4">
+									{n}
+								</div>
+							))}
 						</div>
 					)}
 				</div>
+				<Footer />
 			</div>
 		</>
 	);
