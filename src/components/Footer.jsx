@@ -4,7 +4,9 @@ export default function Footer() {
 			<div className="underline">60% of the time, it works every time.</div>
 			<div>
 				{" "}
-				<a href="https://github.com/becomingjohndoe">Follow Me</a>{" "}
+				<a href="https://github.com/becomingjohndoe" target="__blank">
+					Follow Me
+				</a>{" "}
 			</div>
 		</div>
 	);
