@@ -7,7 +7,7 @@ export default function LetterBox({ reference, letter, addToGuess, index }) {
 				ref={reference}
 				className="flex items-center justify-center h-16 w-16 border-slate-600 border-2 sm:text-4xl text-4xl font-extrabold p-4 rounded"
 			>
-				<div>{letter}</div>
+				{letter}
 			</div>
 			<div className="flex flex-col sm:flex-row mt-2 gap-1">
 				<div
