@@ -80,6 +80,9 @@ export default function Home() {
 					1. INPUT YOUR GUESS
 				</span>
 				<input
+					onClick={(e) => {
+						e.target.select();
+					}}
 					onChange={(e) => {
 						if (e.target.value.length < 5) resetColors();
 						setInput(e.target.value.toUpperCase());
@@ -140,7 +143,6 @@ export default function Home() {
 					GO
 				</button>
 				{/* NEXT Guesses */}
-
 				<div className="flex flex-col">
 					{next && next.length ? (
 						<div className="flex flex-wrap gap-2 p-10 max-h-96 overflow-hidden">
