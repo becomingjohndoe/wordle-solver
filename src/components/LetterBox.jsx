@@ -5,9 +5,9 @@ export default function LetterBox({ reference, letter, addToGuess, index }) {
 		<div className="flex flex-col">
 			<div
 				ref={reference}
-				className=" h-auto w-auto border-slate-600 border-2 sm:text-4xl text-4xl text-center font-extrabold p-4 rounded"
+				className="flex items-center justify-center h-16 w-16 border-slate-600 border-2 sm:text-4xl text-4xl font-extrabold p-4 rounded"
 			>
-				{letter}
+				<div>{letter}</div>
 			</div>
 			<div className="flex flex-col sm:flex-row mt-2 gap-1">
 				<div

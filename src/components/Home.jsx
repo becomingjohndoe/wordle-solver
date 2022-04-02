@@ -76,7 +76,9 @@ export default function Home() {
 			{/* MAIN */}
 			<div className="flex flex-col items-center font-sans">
 				{/* INPUT */}
-				<span className="text-4xl">Input Guess</span>
+				<span className="text-2xl mb-2 font-medium text-slate-600">
+					1. INPUT YOUR GUESS
+				</span>
 				<input
 					onChange={(e) => {
 						if (e.target.value.length < 5) resetColors();
@@ -86,10 +88,13 @@ export default function Home() {
 					type="text"
 					name=""
 					id=""
+					defaultValue="SOLVE"
 					maxLength={5}
 				/>
 				{/* COLOUR SELECTOR */}
-				<span className="text-4xl">Select Colours</span>
+				<span className="text-2xl my-2 font-medium text-slate-600">
+					2. SELECT COLOURS
+				</span>
 				<div className="flex sm:gap-6 gap-3 mt-4">
 					<LetterBox
 						reference={letterOne}
@@ -123,17 +128,18 @@ export default function Home() {
 					/>
 				</div>
 				{/* Guess Button */}
+
 				<button
 					onClick={() => {
 						setNext(getGuess(guess));
 					}}
 					className="h-20 border-2 p-4 mt-4 border-slate-400 text-slate-900 text-2xl"
 				>
-					Get Next Guesses
+					4. Get Next Guesses
 				</button>
 				{/* NEXT Guesses */}
 				<div className="flex flex-col">
-					{next && (
+					{next && next.length ? (
 						<div className="flex flex-wrap gap-2 p-10 max-h-96 overflow-hidden">
 							{next.slice(0, 9).map((n, i) => (
 								<div key={i} className="text-2xl border border-slate-600 p-4">
@@ -141,6 +147,8 @@ export default function Home() {
 								</div>
 							))}
 						</div>
+					) : (
+						<div className="mt-5">No Suggestions!</div>
 					)}
 				</div>
 				<Footer />
