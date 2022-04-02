@@ -128,20 +128,23 @@ export default function Home() {
 					/>
 				</div>
 				{/* Guess Button */}
-
+				<span className="text-2xl mt-8 font-medium text-slate-600">
+					3. GET SUGGESTIONS
+				</span>
 				<button
 					onClick={() => {
 						setNext(getGuess(guess));
 					}}
-					className="h-20 border-2 p-4 mt-4 border-slate-400 text-slate-900 text-2xl"
+					className="w-auto bg-slate-600 border p-2 mt-2 border-slate-400 text-slate-50 text-2xl"
 				>
-					4. Get Next Guesses
+					GO
 				</button>
 				{/* NEXT Guesses */}
+
 				<div className="flex flex-col">
 					{next && next.length ? (
 						<div className="flex flex-wrap gap-2 p-10 max-h-96 overflow-hidden">
-							{next.slice(0, 9).map((n, i) => (
+							{next.slice(0, 10).map((n, i) => (
 								<div key={i} className="text-2xl border border-slate-600 p-4">
 									{n}
 								</div>
@@ -151,6 +154,16 @@ export default function Home() {
 						<div className="mt-5">No Suggestions!</div>
 					)}
 				</div>
+				{/* RESTART */}
+				<div className="flex flex-col items-center">
+					<span className="text-2xl my-2 font-medium text-slate-600">
+						4. FOUND SOLUTION?
+					</span>
+					<button className="w-auto whitespace-nowrap border p-2 mt-4 border-slate-400 text-slate-50 text-2xl bg-slate-600">
+						<a href="/">NEW WORD</a>
+					</button>
+				</div>
+				{/* FOOTER */}
 				<Footer />
 			</div>
 		</>
