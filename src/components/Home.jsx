@@ -90,7 +90,7 @@ export default function Home() {
 				/>
 				{/* COLOUR SELECTOR */}
 				<span className="text-4xl">Select Colours</span>
-				<div className="flex gap-2 mt-4">
+				<div className="flex sm:gap-6 gap-3 mt-4">
 					<LetterBox
 						reference={letterOne}
 						index={0}
